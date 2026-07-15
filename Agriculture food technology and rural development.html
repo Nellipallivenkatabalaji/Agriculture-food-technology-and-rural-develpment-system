@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Agricultural Food Technology and Rural Development</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<style>
+
+*{
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+
+body{
+margin:0;
+background:#e8f5e9;
+}
+
+
+
+button{
+
+background:#2e7d32;
+
+color:white;
+
+border:none;
+
+padding:10px 14px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+
+
+input,select{
+
+width:100%;
+
+padding:10px;
+
+margin:6px 0;
+
+border-radius:8px;
+
+border:1px solid #999;
+
+}
+
+
+
+.card{
+
+background:white;
+
+margin:15px;
+
+padding:20px;
+
+border-radius:15px;
+
+box-shadow:0 0 10px #aaa;
+
+}
+
+
+
+/* LOGIN */
+
+
+#loginPage{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:#1b5e20;
+
+}
+
+
+
+.loginBox{
+
+background:white;
+
+width:350px;
+
+padding:25px;
+
+border-radius:20px;
+
+text-align:center;
+
+}
+
+
+
+/* WEBSITE */
+
+
+#appPage{
+
+display:none;
+
+}
+
+
+
+.header{
+
+background:#2e7d32;
+
+color:white;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:8px;
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+}
+
+
+
+.headerLeft{
+
+display:flex;
+
+align-items:center;
+
+}
+
+
+
+.menuButton{
+
+background:none;
+
+font-size:30px;
+
+margin-right:10px;
+
+}
+
+
+
+.topOptions{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+}
+
+
+
+.topOptions select{
+
+width:110px;
+
+}
+
+
+
+.downloadButton{
+
+background:#1565c0;
+
+}
+
+
+
+
+
+/* MENU */
+
+
+.scrollMenu{
+
+display:flex;
+
+overflow-x:auto;
+
+background:#388e3c;
+
+position:sticky;
+
+top:55px;
+
+z-index:900;
+
+}
+
+
+
+.scrollMenu button{
+
+min-width:180px;
+
+border-radius:0;
+
+}
+
+
+
+
+
+/* DASHBOARD */
+
+
+.dashboard{
+
+position:fixed;
+
+top:55px;
+
+left:0;
+
+width:280px;
+
+height:100%;
+
+background:white;
+
+padding:15px;
+
+box-shadow:0 0 15px gray;
+
+display:none;
+
+z-index:3000;
+
+}
+
+
+
+.dashboard button{
+
+width:100%;
+
+margin:8px 0;
+
+}
+
+
+
+.dashboardHeader{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+
+
+.dashboardHeader button{
+
+background:#d32f2f;
+
+width:auto;
+
+}
+
+
+
+
+
+/* BACK BUTTON */
+
+
+.backButton{
+
+position:fixed;
+
+right:20px;
+
+bottom:20px;
+
+background:#1565c0;
+
+border-radius:30px;
+
+}
+
+
+
+
+
+.cropBox{
+
+display:inline-block;
+
+width:200px;
+
+margin:10px;
+
+padding:15px;
+
+background:white;
+
+border-radius:15px;
+
+box-shadow:0 0 8px gray;
+
+text-align:center;
+
+}
+
+
+
+.cropLogo{
+
+font-size:45px;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- LOGIN PAGE -->
+
+
+<div id="loginPage">
+
+
+<div class="loginBox">
+
+
+<h1>
+🌱 Agricultural Food Technology and Rural Development
+</h1>
+
+
+
+<label>
+Farmer ID
+</label>
+
+
+<input type="text" value="FARMER1001" readonly>
+
+
+
+
+<label>
+Mobile Number
+</label>
+
+
+<input type="text" value="9876543210" readonly>
+
+
+
+
+<label>
+Aadhar Number
+</label>
+
+
+<input type="password" value="123456789012" readonly>
+
+
+
+
+<label>
+District
+</label>
+
+
+<select>
+
+
+<option>
+Nellore District
+</option>
+
+
+<option>
+Guntur District
+</option>
+
+
+</select>
+
+
+
+<button onclick="login()">
+
+Login
+
+</button>
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- MAIN WEBSITE -->
+
+
+<div id="appPage">
+
+
+
+<div class="header">
+
+
+<div class="headerLeft">
+
+
+<button class="menuButton" onclick="openDashboard()">
+
+☰
+
+</button>
+
+
+
+<h2>
+🌱 Agricultural Food Technology and Rural Development
+</h2>
+
+
+
+</div>
+
+
+
+<div class="topOptions">
+
+
+<button class="downloadButton" onclick="downloadWebsite()">
+
+⬇ Download
+
+</button>
+
+
+
+<select onchange="changeLanguage(this.value)">
+
+<option value="en">
+English
+</option>
+
+<option value="te">
+తెలుగు
+</option>
+
+<option value="hi">
+हिन्दी
+</option>
+
+<option value="ta">
+தமிழ்
+</option>
+
+
+</select>
+
+
+
+</div>
+
+
+</div>
+
+<!-- TOP MENU -->
+
+
+<div class="scrollMenu">
+
+
+<button onclick="home()">
+
+🏠 Home
+
+</button>
+
+
+
+<button onclick="schemes()">
+
+🏛 Govt Schemes
+
+</button>
+
+
+
+<button onclick="cropLibrary()">
+
+🌱 Crop Library
+
+</button>
+
+
+
+<button onclick="helpline()">
+
+📞 Helpline Number
+
+</button>
+
+
+
+<button onclick="recommend()">
+
+🤖 AI Crop Recommendation
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<!-- DASHBOARD -->
+
+
+<div id="dashboard" class="dashboard">
+
+
+
+<div class="dashboardHeader">
+
+
+<h2>
+Dashboard
+</h2>
+
+
+
+<button onclick="logout()">
+
+Logout
+
+</button>
+
+
+</div>
+
+
+
+
+<button onclick="home()">
+
+🏠 Home
+
+</button>
+
+
+
+<button onclick="schemes()">
+
+🏛 Govt Schemes
+
+</button>
+
+
+
+<button onclick="cropLibrary()">
+
+🌱 Crop Library
+
+</button>
+
+
+
+<button onclick="helpline()">
+
+📞 Helpline Number
+
+</button>
+
+
+
+<button onclick="recommend()">
+
+🤖 AI Crop Recommendation
+
+</button>
+
+
+
+<button onclick="closeDashboard()">
+
+❌ Close
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div id="content">
+
+</div>
+
+
+
+
+
+<button class="backButton" onclick="goBackPage()">
+
+⬅ Back
+
+</button>
+
+
+
+
+
+
+
+<script>
+
+
+let selectedLanguage="en";
+
+let speech;
+
+let pageHistory=[];
+
+
+
+
+
+function login(){
+
+
+document.getElementById("loginPage").style.display="none";
+
+
+document.getElementById("appPage").style.display="block";
+
+
+home();
+
+
+}
+
+
+
+
+
+function logout(){
+
+
+document.getElementById("appPage").style.display="none";
+
+
+document.getElementById("loginPage").style.display="flex";
+
+
+document.getElementById("dashboard").style.display="none";
+
+
+speechSynthesis.cancel();
+
+
+}
+
+
+
+
+
+function openDashboard(){
+
+
+document.getElementById("dashboard").style.display="block";
+
+
+}
+
+
+
+
+
+function closeDashboard(){
+
+
+document.getElementById("dashboard").style.display="none";
+
+
+}
+
+
+
+
+
+function savePage(){
+
+
+pageHistory.push(
+document.getElementById("content").innerHTML
+);
+
+
+}
+
+
+
+
+
+function goBackPage(){
+
+
+if(pageHistory.length>0){
+
+
+document.getElementById("content").innerHTML=
+
+pageHistory.pop();
+
+
+}
+
+else{
+
+
+home();
+
+
+}
+
+
+speechSynthesis.cancel();
+
+
+}
+
+
+
+
+
+
+// ================= HOME =================
+
+
+
+function home(){
+
+
+document.getElementById("content").innerHTML=`
+
+
+<div class="card">
+
+
+<h2>
+🌱 Crop Technology Assistant
+</h2>
+
+
+
+<input type="file" accept="image/*">
+
+
+
+<br><br>
+
+
+
+<button onclick="cropDiagnosis()">
+
+🔍 Crop Diagnosis
+
+</button>
+
+
+
+<button onclick="medicineDetails()">
+
+💊 Medicine Details
+
+</button>
+
+
+
+</div>
+
+
+`;
+
+}
+
+
+
+
+
+// ================= CROP DIAGNOSIS =================
+
+
+
+function cropDiagnosis(){
+
+
+savePage();
+
+
+
+document.getElementById("content").innerHTML=`
+
+
+<div class="card">
+
+
+<h2>
+🔍 Crop Diagnosis Information
+</h2>
+
+
+
+<p>
+
+
+🌿 Yellow Leaves:
+
+<br>
+May occur due to nutrient deficiency, improper watering or disease.
+
+
+<br><br>
+
+
+🐛 Pest Damage:
+
+<br>
+Check leaves and plants regularly for insects.
+
+
+<br><br>
+
+
+🍂 Leaf Spots:
+
+<br>
+Possible fungal problems. Maintain clean farming practices.
+
+
+<br><br>
+
+
+🌱 Slow Growth:
+
+<br>
+Check soil quality, nutrients and irrigation.
+
+
+<br><br>
+
+
+<b>
+Prevention:
+</b>
+
+
+<br>
+
+✔ Use quality seeds
+
+<br>
+
+✔ Test soil regularly
+
+<br>
+
+✔ Control weeds
+
+<br>
+
+✔ Maintain field hygiene
+
+
+</p>
+
+
+</div>
+
+
+`;
+
+}
+
+
+
+
+
+// ================= MEDICINE DETAILS =================
+
+
+
+function medicineDetails(){
+
+
+savePage();
+
+
+
+document.getElementById("content").innerHTML=`
+
+
+<div class="card">
+
+
+<h2>
+💊 Crop Protection Information
+</h2>
+
+
+
+<p>
+
+
+🌱 Identify crop problems correctly before treatment.
+
+
+<br><br>
+
+
+🐛 Manage pests with suitable agricultural practices.
+
+
+<br><br>
+
+
+🍄 Remove infected parts and maintain healthy crops.
+
+
+<br><br>
+
+
+🌿 Use organic methods where suitable.
+
+
+<br><br>
+
+
+⚠ Follow safety instructions while using agricultural products.
+
+
+</p>
+
+
+</div>
+
+
+`;
+
+}
+
+// ================= CROP LIBRARY DATA =================
+
+
+const crops=[
+
+
+{
+name:"Rice",
+logo:"🌾",
+info:`Rice Cultivation Information
+
+1. Rice grows well in clay and loamy soil.
+2. Requires warm and humid climate.
+3. Select certified quality seeds.
+4. Prepare nursery before planting.
+5. Prepare land properly.
+6. Maintain correct water level.
+7. Apply nutrients according to soil condition.
+8. Control weeds regularly.
+9. Monitor pests and diseases.
+10. Maintain proper spacing.
+11. Provide irrigation at crop stages.
+12. Protect crop during flowering.
+13. Use improved varieties.
+14. Maintain soil fertility.
+15. Follow weather conditions.
+16. Check crop maturity.
+17. Harvest at correct time.
+18. Dry grains properly.
+19. Store grains safely.
+20. Maintain farm records.`
+},
+
+
+
+{
+name:"Wheat",
+logo:"🌾",
+info:`Wheat Cultivation Information
+
+1. Requires cool climate.
+2. Use quality seeds.
+3. Prepare fertile soil.
+4. Maintain correct sowing time.
+5. Provide irrigation.
+6. Apply balanced nutrients.
+7. Control weeds.
+8. Monitor diseases.
+9. Protect from pests.
+10. Harvest after maturity.`
+},
+
+
+
+{
+name:"Cotton",
+logo:"🌿",
+info:`Cotton Cultivation Information
+
+1. Suitable for black soil.
+2. Requires warm climate.
+3. Use certified seeds.
+4. Maintain plant spacing.
+5. Apply nutrients.
+6. Control pests.
+7. Prevent diseases.
+8. Protect flowering stage.
+9. Harvest mature cotton.`
+},
+
+
+
+{
+name:"Maize",
+logo:"🌽",
+info:`Maize Cultivation Information
+
+1. Use quality seeds.
+2. Prepare fertile soil.
+3. Maintain spacing.
+4. Provide irrigation.
+5. Apply nutrients.
+6. Control weeds.
+7. Monitor pests.
+8. Harvest correctly.`
+},
+
+
+
+{
+name:"Tomato",
+logo:"🍅",
+info:`Tomato Cultivation Information
+
+1. Select healthy seeds.
+2. Prepare nursery.
+3. Use fertile soil.
+4. Provide sunlight.
+5. Maintain irrigation.
+6. Apply manure.
+7. Control diseases.
+8. Harvest ripe fruits.`
+},
+
+
+
+{
+name:"Chilli",
+logo:"🌶️",
+info:`Chilli Cultivation Information
+
+1. Select quality seeds.
+2. Prepare nursery.
+3. Maintain moisture.
+4. Apply nutrients.
+5. Control insects.
+6. Prevent diseases.
+7. Harvest regularly.`
+},
+
+
+
+{
+name:"Sugarcane",
+logo:"🎋",
+info:`Sugarcane Cultivation Information
+
+1. Requires fertile soil.
+2. Use healthy planting material.
+3. Maintain irrigation.
+4. Apply manure.
+5. Control weeds.
+6. Monitor pests.
+7. Harvest after maturity.`
+},
+
+
+
+{
+name:"Groundnut",
+logo:"🥜",
+info:`Groundnut Cultivation Information
+
+1. Suitable for sandy loam soil.
+2. Use quality seeds.
+3. Prepare soil properly.
+4. Maintain moisture.
+5. Apply nutrients.
+6. Control weeds.
+7. Harvest properly.`
+},
+
+
+
+{
+name:"Potato",
+logo:"🥔",
+info:`Potato Cultivation Information
+
+1. Use healthy seed tubers.
+2. Prepare loose soil.
+3. Maintain irrigation.
+4. Apply fertilizers.
+5. Control diseases.
+6. Harvest carefully.`
+},
+
+
+
+{
+name:"Onion",
+logo:"🧅",
+info:`Onion Cultivation Information
+
+1. Prepare nursery.
+2. Use healthy seedlings.
+3. Maintain water.
+4. Apply nutrients.
+5. Control pests.
+6. Store bulbs safely.`
+},
+
+
+
+{
+name:"Banana",
+logo:"🍌",
+info:`Banana Cultivation Information
+
+1. Needs warm climate.
+2. Use healthy plants.
+3. Maintain irrigation.
+4. Apply manure.
+5. Prevent diseases.
+6. Harvest mature bunches.`
+},
+
+
+
+{
+name:"Mango",
+logo:"🥭",
+info:`Mango Cultivation Information
+
+1. Select healthy plants.
+2. Prepare suitable land.
+3. Maintain spacing.
+4. Apply nutrients.
+5. Control pests.
+6. Practice pruning.`
+},
+
+
+
+{
+name:"Soybean",
+logo:"🌱",
+info:`Soybean Cultivation Information
+
+1. Select quality seeds.
+2. Prepare soil.
+3. Maintain moisture.
+4. Control weeds.
+5. Monitor diseases.
+6. Harvest properly.`
+},
+
+
+
+{
+name:"Sunflower",
+logo:"🌻",
+info:`Sunflower Cultivation Information
+
+1. Requires sunlight.
+2. Use good seeds.
+3. Prepare soil.
+4. Apply nutrients.
+5. Provide irrigation.
+6. Harvest seeds.`
+},
+
+
+
+{
+name:"Turmeric",
+logo:"🌿",
+info:`Turmeric Cultivation Information
+
+1. Use healthy rhizomes.
+2. Prepare fertile soil.
+3. Maintain moisture.
+4. Apply manure.
+5. Control diseases.
+6. Harvest after maturity.`
+},
+
+
+
+{
+name:"Pulses",
+logo:"🌱",
+info:`Pulses Cultivation Information
+
+1. Select suitable varieties.
+2. Prepare soil.
+3. Maintain moisture.
+4. Control weeds.
+5. Protect from pests.
+6. Harvest at maturity.`
+},
+
+
+
+{
+name:"Millets",
+logo:"🌾",
+info:`Millets Cultivation Information
+
+1. Requires less water.
+2. Select quality seeds.
+3. Prepare land.
+4. Maintain nutrients.
+5. Control weeds.
+6. Harvest properly.`
+}
+
+
+];
+
+
+
+
+// ================= CROP LIBRARY DISPLAY =================
+
+
+function cropLibrary(){
+
+
+savePage();
+
+
+
+let html=`
+
+
+<div class="card">
+
+
+<h2>
+🌱 Crop Library
+</h2>
+
+
+`;
+
+
+
+crops.forEach((crop,index)=>{
+
+
+html+=`
+
+
+<div class="cropBox">
+
+
+<div class="cropLogo">
+
+${crop.logo}
+
+</div>
+
+
+
+<h3>
+
+${crop.name}
+
+</h3>
+
+
+
+<button onclick="openCrop(${index})">
+
+View
+
+</button>
+
+
+
+</div>
+
+
+`;
+
+});
+
+
+
+html+=`
+
+</div>
+
+`;
+
+
+
+document.getElementById("content").innerHTML=html;
+
+
+}
+
+
+
+
+
+
+// ================= OPEN CROP =================
+
+
+
+function openCrop(index){
+
+
+savePage();
+
+
+
+let crop=crops[index];
+
+
+
+document.getElementById("content").innerHTML=`
+
+
+<div class="card">
+
+
+<h2>
+
+${crop.logo} ${crop.name}
+
+</h2>
+
+
+
+<button onclick="speakCrop(${index})">
+
+🔊 Voice
+
+</button>
+
+
+
+<button onclick="stopVoice()">
+
+⏹ Stop
+
+</button>
+
+
+
+<p style="white-space:pre-line;line-height:1.7;">
+
+${crop.info}
+
+</p>
+
+
+
+</div>
+
+
+`;
+
+}
+
+
+
+
+// ================= VOICE OVER =================
+
+
+function speakCrop(index){
+
+
+speechSynthesis.cancel();
+
+
+
+speech=new SpeechSynthesisUtterance(
+
+crops[index].info
+
+);
+
+
+
+if(selectedLanguage=="te"){
+
+speech.lang="te-IN";
+
+}
+
+else if(selectedLanguage=="hi"){
+
+speech.lang="hi-IN";
+
+}
+
+else if(selectedLanguage=="ta"){
+
+speech.lang="ta-IN";
+
+}
+
+else{
+
+speech.lang="en-IN";
+
+}
+
+
+
+speech.rate=0.9;
+
+
+speechSynthesis.speak(speech);
+
+
+}
+
+
+
+
+
+function stopVoice(){
+
+
+speechSynthesis.cancel();
+
+
+}
+
+
+
+
+
+
+// ================= LANGUAGE MENU =================
+
+
+const languageText={
+
+
+en:{
+
+home:"🏠 Home",
+
+scheme:"🏛 Govt Schemes",
+
+crop:"🌱 Crop Library",
+
+help:"📞 Helpline Number",
+
+ai:"🤖 AI Crop Recommendation"
+
+},
+
+
+
+te:{
+
+home:"🏠 హోమ్",
+
+scheme:"🏛 ప్రభుత్వ పథకాలు",
+
+crop:"🌱 పంటల లైబ్రరీ",
+
+help:"📞 హెల్ప్‌లైన్",
+
+ai:"🤖 AI పంట సిఫార్సు"
+
+},
+
+
+
+hi:{
+
+home:"🏠 होम",
+
+scheme:"🏛 सरकारी योजनाएं",
+
+crop:"🌱 फसल पुस्तकालय",
+
+help:"📞 हेल्पलाइन नंबर",
+
+ai:"🤖 AI फसल सुझाव"
+
+},
+
+
+
+ta:{
+
+home:"🏠 முகப்பு",
+
+scheme:"🏛 அரசு திட்டங்கள்",
+
+crop:"🌱 பயிர் நூலகம்",
+
+help:"📞 உதவி எண்",
+
+ai:"🤖 AI பயிர் பரிந்துரை"
+
+}
+
+
+};
+
+
+
+
+
+
+function changeLanguage(lang){
+
+
+selectedLanguage=lang;
+
+
+
+let text=languageText[lang];
+
+
+
+let menu=document.querySelectorAll(".scrollMenu button");
+
+
+
+if(menu.length>=5){
+
+
+menu[0].innerHTML=text.home;
+
+menu[1].innerHTML=text.scheme;
+
+menu[2].innerHTML=text.crop;
+
+menu[3].innerHTML=text.help;
+
+menu[4].innerHTML=text.ai;
+
+
+}
+
+
+
+let dash=document.querySelectorAll(".dashboard button");
+
+
+
+if(dash.length>=5){
+
+
+dash[0].innerHTML=text.home;
+
+dash[1].innerHTML=text.scheme;
+
+dash[2].innerHTML=text.crop;
+
+dash[3].innerHTML=text.help;
+
+dash[4].innerHTML=text.ai;
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+// ================= AI CROP RECOMMENDATION =================
+
+
+function recommend(){
+
+
+savePage();
+
+
+
+document.getElementById("content").innerHTML=`
+
+
+<div class="card">
+
+
+<h2>
+🤖 AI Crop Recommendation For Farmers
+</h2>
+
+
+
+<label>
+🌱 Soil Type
+</label>
+
+
+<select id="soilType">
+
+
+<option>Black Soil</option>
+
+<option>Red Soil</option>
+
+<option>Sandy Soil</option>
+
+<option>Clay Soil</option>
+
+
+</select>
+
+
+
+
+<label>
+🌦 Climate
+</label>
+
+
+<select id="climate">
+
+
+<option>Hot</option>
+
+<option>Moderate</option>
+
+<option>Cold</option>
+
+
+</select>
+
+
+
+
+<label>
+💧 Water Availability
+</label>
+
+
+<select id="water">
+
+
+<option>High</option>
+
+<option>Medium</option>
+
+<option>Low</option>
+
+
+</select>
+
+
+
+
+<label>
+📅 Season
+</label>
+
+
+<select id="season">
+
+
+<option>Kharif</option>
+
+<option>Rabi</option>
+
+<option>Zaid</option>
+
+
+</select>
+
+
+
+
+<label>
+🧪 Soil Condition
+</label>
+
+
+<select id="soilCondition">
+
+
+<option>Normal</option>
+
+<option>Acidic</option>
+
+<option>Alkaline</option>
+
+
+</select>
+
+
+
+
+<br><br>
+
+
+<button onclick="aiCropResult()">
+
+🤖 Recommend Crop
+
+</button>
+
+
+
+<hr>
+
+
+
+<h3>
+🌱 Farming Search Assistant
+</h3>
+
+
+
+<input id="cropQuestion"
+
+placeholder="Ask farming questions">
+
+
+
+<button onclick="cropAIAnswer()">
+
+Search
+
+</button>
+
+
+
+<div id="cropAnswer">
+
+</div>
+
+
+
+</div>
+
+
+`;
+
+}
+
+
+
+
+
+
+
+// ================= AI RESULT =================
+
+
+function aiCropResult(){
+
+
+let soil=document.getElementById("soilType").value;
+
+
+let water=document.getElementById("water").value;
+
+
+let season=document.getElementById("season").value;
+
+
+
+let crop="Rice 🌾";
+
+
+let reason="Suitable crop based on farming details.";
+
+
+
+
+if(soil=="Black Soil"){
+
+
+crop="Cotton 🌿";
+
+
+reason="Black soil is suitable for cotton cultivation.";
+
+}
+
+else if(soil=="Sandy Soil"){
+
+
+crop="Groundnut 🥜";
+
+
+reason="Sandy soil is suitable for groundnut cultivation.";
+
+}
+
+else if(water=="Low"){
+
+
+crop="Millets 🌾";
+
+
+reason="Millets require less water.";
+
+}
+
+else if(season=="Rabi"){
+
+
+crop="Wheat 🌾";
+
+
+reason="Wheat is suitable for Rabi season.";
+
+}
+
+
+
+
+
+document.getElementById("content").innerHTML=`
+
+
+<div class="card">
+
+
+<h2>
+🤖 AI Recommendation Result
+</h2>
+
+
+
+<h1>
+
+${crop}
+
+</h1>
+
+
+
+<p>
+
+${reason}
+
+</p>
+
+
+
+<button onclick="recommend()">
+
+⬅ Back
+
+</button>
+
+
+
+</div>
+
+
+`;
+
+}
+
+// ================= AI SEARCH ASSISTANT =================
+
+
+function cropAIAnswer(){
+
+
+let question=document
+.getElementById("cropQuestion")
+.value
+.toLowerCase();
+
+
+
+let answer="";
+
+
+
+if(question.includes("rice") || question.includes("paddy")){
+
+
+answer="Rice cultivation requires quality seeds, suitable soil, proper irrigation, fertilizer management, weed control and pest protection.";
+
+}
+
+else if(question.includes("wheat")){
+
+
+answer="Wheat requires cool climate, fertile soil, correct sowing time, irrigation and balanced nutrients.";
+
+}
+
+else if(question.includes("cotton")){
+
+
+answer="Cotton grows well in black soil. Use certified seeds and manage pests properly.";
+
+}
+
+else if(question.includes("fertilizer") || question.includes("nutrient")){
+
+
+answer="Use soil testing before fertilizer application and apply nutrients according to crop requirements.";
+
+}
+
+else if(question.includes("pest") || question.includes("insect")){
+
+
+answer="Identify pests correctly and follow integrated pest management methods.";
+
+}
+
+else if(question.includes("soil")){
+
+
+answer="Soil testing helps select suitable crops and understand nutrient conditions.";
+
+}
+
+else if(question.includes("water") || question.includes("irrigation")){
+
+
+answer="Provide irrigation according to crop stage, soil type and weather conditions.";
+
+}
+
+else{
+
+
+answer="Ask questions about crops, soil, fertilizer, pests, irrigation and cultivation methods.";
+
+}
+
+
+
+
+document.getElementById("cropAnswer").innerHTML=`
+
+
+<div class="card">
+
+
+<h3>
+🤖 AI Answer
+</h3>
+
+
+<p>
+
+${answer}
+
+</p>
+
+
+</div>
+
+
+`;
+
+}
+
+
+
+
+
+// ================= GOVERNMENT SCHEMES =================
+
+
+
+function schemes(){
+
+
+savePage();
+
+
+
+document.getElementById("content").innerHTML=`
+
+
+<div class="card">
+
+
+<h2>
+🏛 Government Schemes
+</h2>
+
+
+
+<div class="card">
+
+
+<h3>
+🌾 PM Kisan Samman Nidhi
+</h3>
+
+
+<p>
+Financial assistance support for eligible farmers.
+</p>
+
+
+<button onclick="applyScheme()">
+
+Apply
+
+</button>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+
+<h3>
+🛡 Crop Insurance Scheme
+</h3>
+
+
+<p>
+Support for crop loss protection.
+</p>
+
+
+<button onclick="applyScheme()">
+
+Apply
+
+</button>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+
+<h3>
+💧 Irrigation Support Scheme
+</h3>
+
+
+<p>
+Support for better water management.
+</p>
+
+
+<button onclick="applyScheme()">
+
+Apply
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+`;
+
+}
+
+
+
+
+function applyScheme(){
+
+
+savePage();
+
+
+
+document.getElementById("content").innerHTML=`
+
+
+<div class="card">
+
+
+<h2>
+Farmer Scheme Application
+</h2>
+
+
+
+<input value="Farmer Name : Ramesh Kumar" readonly>
+
+
+<input value="Farmer ID : FARMER1001" readonly>
+
+
+<input value="Land : 5 Acres" readonly>
+
+
+<input value="Bank Verification : Completed" readonly>
+
+
+
+<button onclick="checkEligibility()">
+
+Check Eligibility
+
+</button>
+
+
+
+</div>
+
+
+`;
+
+}
+
+
+
+
+function checkEligibility(){
+
+
+document.getElementById("content").innerHTML=`
+
+
+<div class="card">
+
+
+<h2 style="color:green">
+
+✅ Eligible
+
+</h2>
+
+
+
+<p>
+
+Farmer is eligible based on provided details.
+
+</p>
+
+
+</div>
+
+
+`;
+
+}
+
+
+
+
+
+
+// ================= HELPLINE =================
+
+
+
+function helpline(){
+
+
+savePage();
+
+
+
+document.getElementById("content").innerHTML=`
+
+
+<div class="card">
+
+
+<h2>
+📞 Farmer Helpline Number
+</h2>
+
+
+
+<p>
+
+
+🌱 Kisan Call Centre
+
+<br>
+
+1800-180-1551
+
+
+
+<br><br>
+
+
+
+🌱 PM Kisan Support
+
+<br>
+
+155261
+
+
+
+<br><br>
+
+
+
+🌱 Agriculture Support
+
+<br>
+
+1800-233-4000
+
+
+
+<br><br>
+
+
+Farmers can contact agriculture officers for farming guidance.
+
+
+</p>
+
+
+
+</div>
+
+
+`;
+
+}
+
+
+
+
+
+
+
+// ================= DOWNLOAD WEBSITE =================
+
+
+
+function downloadWebsite(){
+
+
+let website=document.documentElement.outerHTML;
+
+
+
+let file=new Blob(
+
+[website],
+
+{
+type:"text/html"
+}
+
+);
+
+
+
+let url=URL.createObjectURL(file);
+
+
+
+let link=document.createElement("a");
+
+
+
+link.href=url;
+
+
+
+link.download="Agricultural_Food_Technology_Rural_Development.html";
+
+
+
+link.click();
+
+
+
+URL.revokeObjectURL(url);
+
+
+}
+
+
+
+
+
+
+
+window.onbeforeunload=function(){
+
+
+speechSynthesis.cancel();
+
+
+};
+
+
+
+</script>
+
+
+
+</div>
+
+
+</body>
+
+
+</html>
