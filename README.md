@@ -1,0 +1,2 @@
+# Agriculture-food-technology-and-rural-develpment-system
+Project Description  Agriculture, Food Technology and Rural Development focuses on improving farming methods, food quality, and rural life. It promotes modern agriculture, food processing, sustainable practices, and technology-based solutions to increase crop production, reduce losses, support farmers, and encourage the growth of rural communities.
